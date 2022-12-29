@@ -1,0 +1,19 @@
+<div class="row row-flex">
+  <div class="col-12 col-md-4 col-lg-3" *ngFor="let item of books | async">
+    <div class="card">
+      <div class="card-body align-items-center">
+      <img
+        class="card-img-top"
+        [src]="item.imageUrl"
+        [title]="item.title"
+      />
+      <div class="card-body text-center">
+        <h4 class="card-title">{{ item.title }}</h4>
+        <h2 class="card-text">
+          {{ item.price | currency: "EUR":"symbol":"1.2-2" }}
+        </h2>
+        <a class="text text-primary"> Show Details </a>
+      </div>
+    </div>
+  </div>
+</div>
